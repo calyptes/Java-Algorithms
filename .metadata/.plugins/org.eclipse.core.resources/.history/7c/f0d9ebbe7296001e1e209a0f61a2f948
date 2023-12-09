@@ -1,0 +1,74 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// Requirements for blood donation program
+
+		Scanner keyboard;
+		String name;
+		int age; // >17, <66
+		double weight; // >=50
+		int lastDonation; // 90 days or 3 months
+		String severeDisease; // no
+		String infectiousDisease; // 15 days
+		String dentalExtraction; // 1 month
+		int surgery; // 120 days or 4 months
+		int pregnancy; // 12 months or 1 year
+		int tattoosPiercing; // 6 months
+		int transfusion; // 120 days or 4 months
+		int tropicsTrip; // 3 months
+		boolean std; // no
+		boolean drugs; // no
+		boolean riskySexualActivity; // no
+		String answer;
+
+		keyboard = new Scanner(System.in);
+		answer = "";
+
+		System.out.println("Enter name: ");
+		name = keyboard.nextLine();
+		System.out.println("Enter age: ");
+		age = Integer.parseInt(keyboard.nextLine());
+
+		if (age < 18 || age > 65) {
+			System.out.println("You cannot donate.");
+		} else {
+			System.out.println("Enter weight: ");
+			weight = Double.parseDouble(keyboard.nextLine());
+			if (weight < 50) {
+				System.out.println("You cannot donate.");
+			} else {
+				System.out.println("How many months ago did you donate? ");
+				lastDonation = Integer.parseInt(keyboard.nextLine());
+				if (lastDonation < 3) {
+					System.out.println("You cannot donate.");
+				} else {
+					System.out.println("Have you ever had a severe disease? Y/N ");
+					severeDisease = keyboard.nextLine();
+					if (severeDisease.equalsIgnoreCase("Y")) {
+						System.out.println("You cannot donate.");
+					} else {
+						System.out.println(
+								"Have you had an infectious disease or taken antibiotics in the last 2 weeks? Y/N ");
+						infectiousDisease = keyboard.nextLine();
+						if (infectiousDisease.equalsIgnoreCase("Y")) {
+							System.out.println("You cannot donate.");
+						} else {
+							System.out.println("Have you undergone dental extractions in the last month? Y/N ");
+							dentalExtraction = keyboard.nextLine();
+							if (dentalExtraction.equalsIgnoreCase("Y")) {
+								System.out.println("You cannot donate.");
+							}
+						}
+					}
+				}
+			}
+		}
+
+		keyboard.close();
+	}
+}

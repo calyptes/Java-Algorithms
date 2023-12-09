@@ -1,0 +1,56 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		// Requirements for blood donation program
+		
+		Scanner keyboard;
+		String name;
+		int age; // >17, <70
+		double weight; // >=50
+		boolean severeDisease; // no
+		int monthsLastDonation; // 90  days
+		boolean infectiousDiseaseAndAntibiotic; // (15 days)
+		
+		boolean tattoos; //(4 months)
+		int monthsLastTattoo;
+		boolean drugs; //(no)
+		
+		boolean transfusion; //(4 months)
+		int monthsLastTransfusion;
+		String answer;
+
+		keyboard = new Scanner(System.in);
+		answer = "";
+
+		System.out.println("Inserire il Suo nome:");
+		name = keyboard.nextLine();
+		System.out.println("Inserire la Sua età:");
+		age = Integer.parseInt(keyboard.nextLine());
+
+		if (age > 17) {
+			System.out.println("Genere: M/F");
+			gender = keyboard.nextLine();
+			System.out.println("Quanti mesi sono passati dall'utima donazione?");
+			monthsLastDonation = Integer.parseInt(keyboard.nextLine());
+
+			if ((gender.equalsIgnoreCase("M") && monthsLastDonation > 4)
+					|| (gender.equalsIgnoreCase("F") && monthsLastDonation > 6)) {
+				System.out.println("Ha fatto tatuaggi negli ultimi 6 mesi? Y/N");
+				tattoos = keyboard.nextLine().equalsIgnoreCase("Y");
+			} else {
+				answer = name + ", Lei non può donare";
+			}
+			
+		} else {
+			answer = name + ", Lei non può donare";
+		}
+
+		keyboard.close();
+
+	}
+}

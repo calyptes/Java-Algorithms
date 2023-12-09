@@ -1,0 +1,39 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// Annual income calculator program
+
+		String name;
+		String surname;
+		double averageSalary;
+		int monthlyPayments;
+		double annualSalary;
+		String answer;
+		Scanner keyboard;
+
+		keyboard = new Scanner(System.in);
+		answer = "";
+
+		System.out.println("Inserire il proprio nome:");
+		name = keyboard.nextLine();
+		System.out.println("Inserire il proprio cognome:");
+		surname = keyboard.nextLine();
+		System.out.println("Inserire il proprio stipendio medio:");
+		averageSalary = Double.parseDouble(keyboard.nextLine());
+		System.out.println("Inserire le proprie mensilità contrattuali:");
+		monthlyPayments = Integer.parseInt(keyboard.nextLine());
+		annualSalary = 0;
+
+		annualSalary = averageSalary * monthlyPayments;
+		keyboard.close();
+
+		answer = "Hello mr./mrs. " + name + surname + " your annual salary is " + annualSalary + "$";
+		System.out.println(answer);
+	}
+
+}
