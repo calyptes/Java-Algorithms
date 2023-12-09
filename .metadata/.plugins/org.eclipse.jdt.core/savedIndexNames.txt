@@ -1,7 +1,0 @@
-INDEX VERSION 1.134+/Users/michelledecarli/Documents/Code/java/.metadata/.plugins/org.eclipse.jdt.core
-1865797976.index
-1361060775.index
-2680841098.index
-2126260648.index
-1327141024.index
-3453539238.index
