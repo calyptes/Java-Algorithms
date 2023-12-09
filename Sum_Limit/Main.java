@@ -32,6 +32,7 @@ public class Main {
 
 		}
 
+        keyboard.close();
 		System.out.println("27: sum of " + answer + " , numbers greater than 10: " + counter);
 	}
 
